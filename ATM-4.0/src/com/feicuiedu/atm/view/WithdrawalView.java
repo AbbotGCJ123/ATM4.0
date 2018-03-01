@@ -48,7 +48,10 @@ public class WithdrawalView implements UserBusiness {
 						if (bon) {
 							
 							re.setTarget_money("-"+money);
-							re.setMoney(user.getMoney() - money);
+							
+							double reset = user.getMoney() - money;
+							
+							re.setMoney(reset);
 							srs.saveRecord(re);
 							
 							System.out.println("取款成功！");

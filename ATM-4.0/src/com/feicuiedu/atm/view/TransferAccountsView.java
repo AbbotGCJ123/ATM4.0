@@ -66,8 +66,11 @@ public class TransferAccountsView implements UserBusiness {
 									rea.setTarget_money("-" + money);
 									reb.setTarget_money(String.valueOf(money));
 									
-									rea.setMoney(user.getMoney() - money);
-									reb.setMoney(buser.getMoney() + money);
+									double areset = user.getMoney() - money;
+									double breset = user.getMoney() + money;
+									
+									rea.setMoney(areset);
+									reb.setMoney(breset);
 									
 									srs.saveRecord(rea);
 									srs.saveRecord(reb);

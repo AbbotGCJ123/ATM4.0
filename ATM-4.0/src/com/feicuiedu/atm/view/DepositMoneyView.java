@@ -45,7 +45,10 @@ public class DepositMoneyView implements UserBusiness {
 					if (boon) {
 						
 						re.setTarget_money(String.valueOf(money));
-						re.setMoney(user.getMoney() + money);
+						
+						double reset = user.getMoney()+money;
+						
+						re.setMoney(reset);
 						srs.saveRecord(re);
 						
 						System.out.println("存款成功！");
